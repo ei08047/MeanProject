@@ -18,6 +18,10 @@ app.config(['$routeProvider',
                 templateUrl: 'templates/cigar_form.html',
                 controller : 'form2Ctrl'
             }).
+            when('/DisplayCigar',{
+                templateUrl: 'templates/cigar_display.html',
+                controller : 'cigarDisplayCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });
@@ -51,4 +55,5 @@ app.controller('form2Ctrl', function($scope) {
 
 
 
-
+app.controller('cigarDisplayCtrl', function($scope) {
+});
