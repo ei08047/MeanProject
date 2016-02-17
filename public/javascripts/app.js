@@ -10,37 +10,13 @@ app.config(['$routeProvider',
                 templateUrl: '/templates/add_order.html',
                 controller: 'AddOrderController'
             }).
-            when('/Desporto', {
-                templateUrl: '/templates/example.html',
-                controller: 'DesportoController'
-            }).
-            when('/Jogos', {
-                templateUrl: 'templates/example.html',
-                controller: 'JogosController'
-            }).
-            when('/Musica', {
-                templateUrl: 'templates/example.html',
-                controller: 'MusicaController'
-            }).
-            when('/Filmes', {
-                templateUrl: 'templates/example.html',
-                controller: 'FilmesController'
-            }).
-            when('/Series', {
-                templateUrl: 'templates/example.html',
-                controller: 'SeriesController'
-            }).
-            when('/Livros', {
-                templateUrl: 'templates/example.html',
-                controller: 'LivrosController'
-            }).
-            when('/Fotos', {
-                templateUrl: 'templates/display_pics.html',
-                controller: 'DisplayPicsController'
-            }).
             when('/AddContact', {
                 templateUrl: 'templates/add_contact.html',
                 controller: 'formCtrl'
+            }).
+            when('/AddCigar',{
+                templateUrl: 'templates/cigar_form.html',
+                controller : 'form2Ctrl'
             }).
             otherwise({
                 redirectTo: '/'
@@ -61,40 +37,16 @@ app.controller('AddOrderController', function($scope) {
 
 });
 
-app.controller('DesportoController', function($scope) {
-    $scope.message = 'Desporto';
-});
-
-app.controller('JogosController', function($scope) {
-    $scope.message = 'Jogos';
-});
-
-app.controller('MusicaController', function($scope) {
-    $scope.message = 'Musica';
-});
-
-app.controller('FilmesController', function($scope) {
-    $scope.message = 'Filmes';
-});
-
-app.controller('SeriesController', function($scope) {
-    $scope.message = 'Series';
-});
-
-app.controller('LivrosController', function($scope) {
-    $scope.message = 'Livros';
-});
-
-app.controller('DisplayPicsController', function($scope) {
-    $scope.message = 'Pics';
-});
-
 app.controller('formCtrl', function($scope) {
     $scope.master = {firstName:"John", lastName:"Doe"};
     $scope.reset = function() {
         $scope.user = angular.copy($scope.master);
     };
     $scope.reset();
+});
+
+app.controller('form2Ctrl', function($scope) {
+    $scope.cigar = {type:"JPS", time:"22:30" , day : "17/02"};
 });
 
 
